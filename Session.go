@@ -38,6 +38,6 @@ func (session Session) createSession(email string, password string) {
 // EFFECTS; Destroys a session based on the given sesskey.
 func (session Session) endSession(sesskey string) {
 
-	var params Parameters
-	req := createPostRequest("/auth/sessiondestroy", params)
+	//var params Parameters
+	//req := createPostRequest("/auth/sessiondestroy", params)
 }

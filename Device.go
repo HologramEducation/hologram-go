@@ -2,7 +2,6 @@ package HologramGo
 
 import (
 	"fmt"
-	//"time"
 	"os"
 )
 
@@ -10,7 +9,7 @@ type Device map[string]interface{}
 
 // REQUIRES: a device id.
 // EFFECTS: Returns device details.
-func (device Device) getDevice(id int) {
+func (device Device) GetDevice(id int) {
 
 	req := createGetRequest("/devices" + string(id))
 
@@ -31,26 +30,26 @@ func (device Device) getDevice(id int) {
 	fmt.Println(" done with Device");
 }
 
-func (device Device) getDeviceDataPlan(planid string) {
+func (device Device) GetDeviceDataPlan(planid string) {
 
-	req := createGetRequest("/devices" + string(planid))
+	//req := createGetRequest("/devices" + string(planid))
 }
 
 // EFFECTS: Claim ownership and activate the given device.
-func (device Device) claimOwnershipAndActiveDevice(simnumber int) {
+func (device Device) ClaimOwnershipAndActiveDevice(simnumber int) {
 
-	var params Parameters
-	req := createPostRequest("/cellular/sim_" + string(simnumber), params)
+	//var params Parameters
+	//req := createPostRequest("/cellular/sim_" + string(simnumber), params)
 }
 
-func (device Device) purchaseAndAssignPhoneNumberToDevice(deviceid int) {
+func (device Device) PurchaseAndAssignPhoneNumberToDevice(deviceid int) {
 
-	var params Parameters
-	req := createPostRequest("/devices/" + string(deviceid) + "/addnumber", params)
+	//var params Parameters
+	//req := createPostRequest("/devices/" + string(deviceid) + "/addnumber", params)
 
 }
 
-func (device Device) getDeviceUserId() int {
+func (device Device) GetDeviceUserId() int {
 	return device["userid"].(int)
 }
 

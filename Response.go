@@ -93,9 +93,10 @@ type Response http.Response
 func (response Response) parseBody() (b []byte, err error) {
 
 	var (
-		header string
+		//header string
 		reader io.Reader
 	)
+
 	defer response.Body.Close()
 	reader = response.Body
 

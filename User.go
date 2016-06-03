@@ -41,28 +41,28 @@ func (user User) changeUserPassword(password string) {
 // EFFECTS: Retrieve user addresses.
 func (user User) getUserAddresses() {
 
-	req := createGetRequest("/users/me/addresses")
+	//req := createGetRequest("/users/me/addresses")
 }
 
 // REQUIRES: The address.
 // EFFECTS: Adds a new address to the user.
 func (user User) addUserAddress() {
 
-	var params Parameters
-	req := createPostRequest("/users/me/addresses", params)
+	//var params Parameters
+	//req := createPostRequest("/users/me/addresses", params)
 }
 
 // EFFECTS: Returns the user's API key.
 func (user User) getAPIKey() {
 
-	req := createGetRequest("/users/me/apikey")
+	//req := createGetRequest("/users/me/apikey")
 }
 
 // EFFECTS: Generates a new API key.
 func (user User) generateNewAPIKey() {
 
-	var params Parameters
-	req := createPostRequest("/users/me/apikey", params)
+	//var params Parameters
+	//req := createPostRequest("/users/me/apikey", params)
 }
 
 func (user User) getUserFirstName() string {

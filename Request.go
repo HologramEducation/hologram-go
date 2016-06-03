@@ -15,14 +15,15 @@ const HOLOGRAM_REST_API_BASEURL = "https://dashboard.hologram.io/api/1/"
 var err	error
 
 // Sends a HTTP request through this instance's HTTP client.
-func SendRequest(req *http.Request) (response *http.Response, err error) {
+func SendRequest(req *http.Request) (response *Response, err error) {
 
 	client := &http.Client {
 		//CheckRedirect: redirectPolicyFunc,
 	}
 
-	response, err = client.Do(req)
+	resp, err := client.Do(req)
 
+	response = (*Response)(resp)
 	return response, err
 }
 
