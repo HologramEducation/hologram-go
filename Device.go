@@ -20,7 +20,6 @@ func (device Device) GetDevice(id int) {
 	}
 
 	err = resp.Parse(&Device{})
-
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
@@ -30,11 +29,14 @@ func (device Device) GetDevice(id int) {
 	fmt.Println(" done with Device");
 }
 
+// REQUIRES: A plan id.
+// EFFECTS: Returns a given device data plan
 func (device Device) GetDeviceDataPlan(planid string) {
 
 	//req := createGetRequest("/devices" + string(planid))
 }
 
+// REQUIRES: A sim number.
 // EFFECTS: Claim ownership and activate the given device.
 func (device Device) ClaimOwnershipAndActiveDevice(simnumber int) {
 
@@ -42,6 +44,8 @@ func (device Device) ClaimOwnershipAndActiveDevice(simnumber int) {
 	//req := createPostRequest("/cellular/sim_" + string(simnumber), params)
 }
 
+// REQUIRES: A device id.
+// EFFECTS: Purchase and assign a phone number to the device.
 func (device Device) PurchaseAndAssignPhoneNumberToDevice(deviceid int) {
 
 	//var params Parameters
@@ -49,10 +53,12 @@ func (device Device) PurchaseAndAssignPhoneNumberToDevice(deviceid int) {
 
 }
 
+// EFFECTS: Returns the user id.
 func (device Device) GetDeviceUserId() int {
 	return device["userid"].(int)
 }
 
+// EFFECTS: Returns the device name.
 func (device Device) getDeviceName() string {
 	return device["name"].(string)
 }
@@ -62,6 +68,7 @@ func (device Device) getWhenCreated() string {
 	return device["whencreated"].(string)
 }
 
+// EFFECTS: Returns a phone number.
 func (device Device) getPhoneNumber() string {
 	return device["phonenumber"].(string)
 }
