@@ -9,7 +9,7 @@ type SMS map[string]interface{}
 
 // REQUIRES: a device id and a phone number.
 // EFFECTS: Sends an SMS to a device.
-func (sms SMS) sendSMSToDevice(deviceid int, phonenumber string) {
+func (sms SMS) SendSMSToDevice(deviceid int, phonenumber string) {
 
 	var params Parameters
 	req := createPostRequest("/sms/incoming", params)

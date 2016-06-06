@@ -23,3 +23,7 @@ in your main folder.
 
 ## Support
 
+TODOs:
+1. Uppercase Unicode for functions - so can be seen externally from package.
+2. 404 error in Parse function, maybe invalid credentials?
+3. Add unit tests + examples

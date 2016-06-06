@@ -134,15 +134,18 @@ func (response Response) Parse(out interface{}) (err error) {
 	case STATUS_ACCEPTED:
 		fallthrough
 	case STATUS_OK:
-		if b, err = response.parseBody(); err != nil {
+		b, err = response.parseBody();
+		if err != nil {
 			return err
 		}
+		fmt.Println(string(b));
 		err = json.Unmarshal(b, out)
 		if err == io.EOF {
 			err = nil
 		}
 	default:
-		if b, err = response.parseBody(); err != nil {
+		b, err = response.parseBody();
+		if err != nil {
 			return err
 		}
 		err = NewResponseError(response.StatusCode, string(b))

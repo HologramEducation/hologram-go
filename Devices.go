@@ -6,12 +6,13 @@ import (
 )
 
 // Devices is just a list of Device(s).
-type Devices []Device
+//type Devices []Device interface{}
+
+type Devices map[string]interface{}
 
 // REQUIRES: a device id.
 // EFFECTS: Returns device details.
-func (devices Devices) getDevices(userid int, sim int, phonenumber string,
-									name string) {
+func (devices Devices) GetDevices() {
 
 	req := createGetRequest("/devices")
 
@@ -22,12 +23,11 @@ func (devices Devices) getDevices(userid int, sim int, phonenumber string,
 	}
 
 	err = resp.Parse(&Devices{})
-
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("done with Devices");
+	fmt.Println(" done with Devices");
 }
