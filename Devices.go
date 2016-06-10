@@ -28,6 +28,4 @@ func (devices Devices) GetDevices() {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
-
-	fmt.Println(" done with Devices");
 }

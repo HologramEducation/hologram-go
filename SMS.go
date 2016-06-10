@@ -27,6 +27,4 @@ func (sms SMS) SendSMSToDevice(deviceid int, phonenumber string) {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
-
-	//fmt.Println(SMS);
 }

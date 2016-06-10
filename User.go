@@ -10,7 +10,7 @@ type User map[string]interface{}
 
 // REQUIRES: a device id.
 // EFFECTS: Makes a HTTP Post call to create a new user.
-func (user User) createUser(id int) {
+func (user User) CreateUser(id int) {
 
 	var params Parameters
 	req := createPostRequest("/users", params)
@@ -31,6 +31,26 @@ func (user User) createUser(id int) {
 
 	fmt.Println(" done with User");
 }
+
+func (user User) GetUserAccountDetails(id int) {
+
+	req := createGetRequest("/users/" + string(id));
+
+	resp, err := SendRequest(req)
+	if err != nil {
+		fmt.Printf("Could not send request: %v\n", err)
+		os.Exit(1)
+	}
+
+	err = resp.Parse(&User{})
+
+	// error handling
+	if err != nil {
+		fmt.Printf("Problem parsing response: %v\n", err)
+		os.Exit(1)
+	}
+}
+
 
 // REQUIRES: a new password from the user.
 // EFFECTS: Changes the user's password
