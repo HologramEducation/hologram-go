@@ -15,7 +15,7 @@ type User map[string]interface{}
 func (user User) CreateUser(id int) {
 
 	var params Parameters
-	req := createPostRequest("/users", params)
+	req := createPostRequest("/users/", params)
 
 	resp, err := SendRequest(req)
 	if err != nil {
@@ -57,13 +57,44 @@ func (user User) GetUserAccountDetails(id int) {
 // REQUIRES: a new password from the user.
 // EFFECTS: Changes the user's password
 func (user User) ChangeUserPassword(password string) {
+
+	var params Parameters
+	req := createPostRequest("/users/me/password/", params)
+
+	resp, err := SendRequest(req)
+	if err != nil {
+		fmt.Printf("Could not send request: %v\n", err)
+		os.Exit(1)
+	}
+
+	err = resp.Parse(&User{})
+
+	// error handling
+	if err != nil {
+		fmt.Printf("Problem parsing response: %v\n", err)
+		os.Exit(1)
+	}
 }
 
 
 // EFFECTS: Retrieve user addresses.
 func (user User) GetUserAddresses() {
 
-	//req := createGetRequest("/users/me/addresses")
+	req := createGetRequest("/users/me/addresses")
+
+	resp, err := SendRequest(req)
+	if err != nil {
+		fmt.Printf("Could not send request: %v\n", err)
+		os.Exit(1)
+	}
+
+	err = resp.Parse(&User{})
+
+	// error handling
+	if err != nil {
+		fmt.Printf("Problem parsing response: %v\n", err)
+		os.Exit(1)
+	}
 }
 
 // REQUIRES: The address.
@@ -77,7 +108,21 @@ func (user User) AddUserAddress() {
 // EFFECTS: Returns the user's API key.
 func (user User) GetAPIKey() {
 
-	//req := createGetRequest("/users/me/apikey")
+	req := createGetRequest("/users/me/apikey")
+
+	resp, err := SendRequest(req)
+	if err != nil {
+		fmt.Printf("Could not send request: %v\n", err)
+		os.Exit(1)
+	}
+
+	err = resp.Parse(&User{})
+
+	// error handling
+	if err != nil {
+		fmt.Printf("Problem parsing response: %v\n", err)
+		os.Exit(1)
+	}
 }
 
 // EFFECTS: Generates a new API key.
