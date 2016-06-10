@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+// Users is just a list of User(s).
+type Users []User
 type User map[string]interface{}
 
 
@@ -54,46 +56,46 @@ func (user User) GetUserAccountDetails(id int) {
 
 // REQUIRES: a new password from the user.
 // EFFECTS: Changes the user's password
-func (user User) changeUserPassword(password string) {
+func (user User) ChangeUserPassword(password string) {
 }
 
 
 // EFFECTS: Retrieve user addresses.
-func (user User) getUserAddresses() {
+func (user User) GetUserAddresses() {
 
 	//req := createGetRequest("/users/me/addresses")
 }
 
 // REQUIRES: The address.
 // EFFECTS: Adds a new address to the user.
-func (user User) addUserAddress() {
+func (user User) AddUserAddress() {
 
 	//var params Parameters
 	//req := createPostRequest("/users/me/addresses", params)
 }
 
 // EFFECTS: Returns the user's API key.
-func (user User) getAPIKey() {
+func (user User) GetAPIKey() {
 
 	//req := createGetRequest("/users/me/apikey")
 }
 
 // EFFECTS: Generates a new API key.
-func (user User) generateNewAPIKey() {
+func (user User) GenerateNewAPIKey() {
 
 	//var params Parameters
 	//req := createPostRequest("/users/me/apikey", params)
 }
 
-func (user User) getUserFirstName() string {
+func (user User) GetUserFirstName() string {
 	return user["first"].(string)
 }
 
-func (user User) getUserLastName() string {
+func (user User) GetUserLastName() string {
 	return user["last"].(string)
 }
 
-func (user User) getUserRole() string {
+func (user User) GetUserRole() string {
 	return user["role"].(string)
 }
 
