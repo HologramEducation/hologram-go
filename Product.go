@@ -31,7 +31,7 @@ func (products Products) GetProducts() {
 // EFFECTS: Returns product details.
 func (product Product) GetProduct(id int) {
 
-	req := createGetRequest("/product/" + string(id))
+	req := createGetRequest("/products/" + string(id))
 
 	resp, err := SendRequest(req)
 	if err != nil {
@@ -50,7 +50,7 @@ func (product Product) GetProduct(id int) {
 // EFFECTS: Returns product categories.
 func (product Product) GetProductCategories() {
 
-	req := createGetRequest("/product/categories/")
+	req := createGetRequest("/products/categories/")
 
 	resp, err := SendRequest(req)
 	if err != nil {
@@ -66,10 +66,10 @@ func (product Product) GetProductCategories() {
 	}
 }
 
-// EFFECTS: Returns product categories.
+// EFFECTS: Returns product options.
 func (product Product) GetProductOptions() {
 
-	req := createGetRequest("/product/options/")
+	req := createGetRequest("/products/options/")
 
 	resp, err := SendRequest(req)
 	if err != nil {
