@@ -8,8 +8,8 @@ import (
 type SMS map[string]interface{}
 
 // REQUIRES: a device id and a phone number.
-// EFFECTS: Sends an SMS to a device.
-func (sms SMS) SendSMSToDevice(deviceid int, phonenumber string) {
+// EFFECTS: Sends an SMS to a device and returns the response
+func SendSMSToDevice(deviceid int, phonenumber string) SMS {
 
 	var params Parameters
 	req := createPostRequest("/sms/incoming", params)
@@ -20,11 +20,13 @@ func (sms SMS) SendSMSToDevice(deviceid int, phonenumber string) {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&SMS{})
-
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
+
+	return payload["data"].(map[string]interface{})
 }

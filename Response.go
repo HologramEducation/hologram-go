@@ -138,7 +138,6 @@ func (response Response) Parse(out interface{}) (err error) {
 		if err != nil {
 			return err
 		}
-		fmt.Println(string(b));
 		err = json.Unmarshal(b, out)
 		if err == io.EOF {
 			err = nil

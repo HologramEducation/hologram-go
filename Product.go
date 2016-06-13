@@ -3,13 +3,16 @@ package HologramGo
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 type Product map[string]interface{}
-type Products map[string]interface{}
 
+type Products []Product
+
+// TODO: Change the return type.
 // EFFECTS: Returns product details.
-func (products Products) GetProducts() {
+func GetProducts() Product {
 
 	req := createGetRequest("/products/")
 
@@ -19,19 +22,22 @@ func (products Products) GetProducts() {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&Device{})
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
+
+	return payload["data"].(map[string]interface{})
 }
 
 // REQUIRES: a product id.
-// EFFECTS: Returns product details.
-func (product Product) GetProduct(id int) {
+// EFFECTS: Returns product details response.
+func GetProduct(id int) Product {
 
-	req := createGetRequest("/products/" + string(id))
+	req := createGetRequest("/products/" + strconv.Itoa(id))
 
 	resp, err := SendRequest(req)
 	if err != nil {
@@ -39,16 +45,19 @@ func (product Product) GetProduct(id int) {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&Device{})
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
+
+	return payload["data"].(map[string]interface{})
 }
 
 // EFFECTS: Returns product categories.
-func (product Product) GetProductCategories() {
+func GetProductCategories() Product {
 
 	req := createGetRequest("/products/categories/")
 
@@ -58,16 +67,19 @@ func (product Product) GetProductCategories() {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&Device{})
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
+
+	return payload["data"].(map[string]interface{})
 }
 
 // EFFECTS: Returns product options.
-func (product Product) GetProductOptions() {
+func GetProductOptions() Product {
 
 	req := createGetRequest("/products/options/")
 
@@ -77,10 +89,53 @@ func (product Product) GetProductOptions() {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&Device{})
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
+
+	return payload["data"].(map[string]interface{})
+}
+
+// EFFECTS: Returns the id of the product.
+func (product Product) GetProductId() float64 {
+	return product["id"].(float64)
+}
+
+// EFFECTS: Returns the sku of the product.
+func (product Product) GetProductSku() string {
+	return product["sku"].(string)
+}
+
+// EFFECTS: Returns the name of the product.
+func (product Product) GetProductName() string {
+	return product["name"].(string)
+}
+
+// EFFECTS: Returns the description of the product.
+func (product Product) GetProductDescription() string {
+	return product["description"].(string)
+}
+
+// EFFECTS: Returns the price of the product.
+func (product Product) GetProductPrice() string {
+	return product["price"].(string)
+}
+
+// EFFECTS: Returns the sku of the product.
+func (product Product) GetProductImageUrl() string {
+	return product["imageurl"].(string)
+}
+
+// EFFECTS: Returns the invoice description of the product.
+func (product Product) GetProductInvoiceDescription() string {
+	return product["invoice_description"].(string)
+}
+
+// EFFECTS: Returns the invoice description of the product.
+func (product Product) GetProductPreorderDetails() string {
+	return product["preorder_details"].(string)
 }

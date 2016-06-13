@@ -30,6 +30,7 @@ func GetDevices() Device {
 		fmt.Printf("Problem parsing response: %v\n", err)
 		os.Exit(1)
 	}
+
 	return payload["data"].(map[string]interface{})
 }
 
@@ -101,6 +102,11 @@ func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 	return payload["data"].(map[string]interface{})
 }
 
+// EFFECTS: Returns the id.
+func (device Device) GetDeviceId() float64 {
+	return device["id"].(float64)
+}
+
 // EFFECTS: Returns the user id.
 func (device Device) GetDeviceUserId() float64 {
 	return device["userid"].(float64)
@@ -109,6 +115,11 @@ func (device Device) GetDeviceUserId() float64 {
 // EFFECTS: Returns the device name.
 func (device Device) GetDeviceName() string {
 	return device["name"].(string)
+}
+
+// EFFECTS: Returns the device type.
+func (device Device) GetDeviceType() string {
+	return device["type"].(string)
 }
 
 // TODO: Handle as Time type

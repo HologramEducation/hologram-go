@@ -41,7 +41,6 @@ func SendRequest(req *http.Request) (response *Response, err error) {
 	}
 
 	client := &http.Client {
-		//CheckRedirect: redirectPolicyFunc,
 		Jar: jar,
 	}
 
@@ -57,7 +56,6 @@ func SendRequest(req *http.Request) (response *Response, err error) {
 func createGetRequest(derivedUrl string) (req *http.Request) {
 
 	req, err = http.NewRequest("GET", HOLOGRAM_REST_API_BASEURL + derivedUrl, nil)
-	fmt.Println(HOLOGRAM_REST_API_BASEURL + derivedUrl);
 	if err != nil {
 		fmt.Printf("Could not parse request: %v\n", err)
 		os.Exit(1)
