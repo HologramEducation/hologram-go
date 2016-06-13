@@ -13,3 +13,12 @@ func TestGetProduct(t *testing.T) {
 		t.Fatalf("Expected %s, got %s", expectedProductName, product.GetProductName())
 	}
 }
+
+// TODO: Add product options and categories.
+func TestGetProductOptions(t *testing.T) {
+
+}
+
+func TestGetProductCategories(t *testing.T) {
+
+}
