@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"io/ioutil"
+	"encoding/json"
 	"strings"
 	"fmt"
 	"log"
@@ -24,8 +26,19 @@ var password string
 // REQUIRES: User's username and password.
 // EFFECTS: Initializes the user's username and password state to be used in each
 //			basic authenticated API call.
-func InitializeUsernameAndPassword(input_username string, input_password string) {
-	username, password = input_username, input_password
+func InitializeUsernameAndPassword(credentialFile string) {
+
+	file, e := ioutil.ReadFile(credentialFile)
+	if e != nil {
+		fmt.Printf("Error opening file: %v\n", e)
+	}
+
+	type Payload map[string]interface{}
+	var jsonpayload = Payload{}
+	json.Unmarshal(file, &jsonpayload)
+
+	username = jsonpayload["username"].(string)
+	password = jsonpayload["password"].(string)
 }
 
 // EFFECTS: Sends a HTTP request through this instance's HTTP client.
