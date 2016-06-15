@@ -8,8 +8,10 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"fmt"
+	"os"
 )
 
+// HTTP status codes
 const (
 	STATUS_OK           = 200
 	STATUS_CREATED      = 201
@@ -23,69 +25,18 @@ const (
 	STATUS_GATEWAY      = 502
 )
 
-// Error returned if there was an issue parsing the response body.
-type ResponseError struct {
-	Body string
-	Code int
-}
+// EFFECTS: Takes in the response and unmarshalls it into the appropriate interface.
+func unmarshallIntoObject(resp *Response) map[string]interface{} {
 
-func NewResponseError(code int, body string) ResponseError {
-	return ResponseError{Code: code, Body: body}
-}
-
-func (e ResponseError) Error() string {
-	return fmt.Sprintf(
-		"Unable to handle response (status code %d): `%v`",
-		e.Code,
-		e.Body)
-}
-
-
-type Error map[string]interface{}
-
-func (e Error) Code() int64 {
-	return int64(e["code"].(float64))
-}
-
-func (e Error) Message() string {
-	return e["message"].(string)
-}
-
-func (e Error) Error() string {
-	msg := "Error %v: %v"
-	return fmt.Sprintf(msg, e.Code(), e.Message())
-}
-
-type Errors map[string]interface{}
-
-func (e Errors) Error() string {
-	var (
-		msg string = ""
-		err Error
-		ok  bool
-	)
-	if e["errors"] == nil {
-		return msg
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
+	// error handling
+	if err != nil {
+		fmt.Printf("Problem parsing response: %v\n", err)
+		os.Exit(1)
 	}
-	for _, val := range e["errors"].([]interface{}) {
-		if err, ok = val.(map[string]interface{}); ok {
-			msg += err.Error() + ". "
-		}
-	}
-	return msg
-}
 
-func (e Errors) String() string {
-	return e.Error()
-}
-
-func (e Errors) Errors() []Error {
-	var errs = e["errors"].([]interface{})
-	var out = make([]Error, len(errs))
-	for i, val := range errs {
-		out[i] = Error(val.(map[string]interface{}))
-	}
-	return out
+	return payload["data"].(map[string]interface{})
 }
 
 type Response http.Response
@@ -105,36 +56,33 @@ func (response Response) parseBody() (b []byte, err error) {
 	return b, err
 }
 
+// EFFECTS: Populates the given object based on the returned response
 func (response Response) Parse(out interface{}) (err error) {
 
 	var b []byte
 
-	switch response.StatusCode {
-	case STATUS_UNAUTHORIZED:
-		fallthrough
-	case STATUS_NOTFOUND:
-		fallthrough
-	case STATUS_GATEWAY:
-		fallthrough
-	case STATUS_FORBIDDEN:
-		fallthrough
-	case STATUS_INVALID:
+	statusCode := response.StatusCode
+
+	if statusCode == STATUS_UNAUTHORIZED || statusCode == STATUS_NOTFOUND ||
+		statusCode == STATUS_GATEWAY || statusCode == STATUS_FORBIDDEN ||
+		statusCode == STATUS_INVALID {
+
 		e := &Errors{}
-		if b, err = response.parseBody(); err != nil {
-			return
+		b, err = response.parseBody()
+		if err != nil {
+			return err
 		}
-		if err = json.Unmarshal(b, e); err != nil {
+
+		err = json.Unmarshal(b, e)
+
+		if err != nil {
 			err = NewResponseError(response.StatusCode, string(b))
 		} else {
 			err = *e
 		}
-		return
-	case STATUS_CREATED:
-		fallthrough
-	case STATUS_ACCEPTED:
-		fallthrough
-	case STATUS_OK:
-		b, err = response.parseBody();
+	} else if statusCode == STATUS_CREATED || statusCode == STATUS_ACCEPTED ||
+			statusCode == STATUS_OK {
+		b, err = response.parseBody()
 		if err != nil {
 			return err
 		}
@@ -142,8 +90,8 @@ func (response Response) Parse(out interface{}) (err error) {
 		if err == io.EOF {
 			err = nil
 		}
-	default:
-		b, err = response.parseBody();
+	} else {
+		b, err = response.parseBody()
 		if err != nil {
 			return err
 		}

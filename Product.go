@@ -31,6 +31,7 @@ func GetProducts() Product {
 	}
 
 	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // REQUIRES: a product id.
@@ -45,15 +46,7 @@ func GetProduct(id int) Product {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // EFFECTS: Returns product categories.
@@ -67,15 +60,7 @@ func GetProductCategories() Product {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // EFFECTS: Returns product options.
@@ -89,15 +74,7 @@ func GetProductOptions() Product {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // EFFECTS: Returns the id of the product.

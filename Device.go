@@ -23,15 +23,7 @@ func GetDevices() Device {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // REQUIRES: a device id.
@@ -47,15 +39,7 @@ func GetDevice(deviceid int) Device {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // REQUIRES: A sim number.
@@ -71,13 +55,7 @@ func ClaimOwnershipAndActiveDevice(simnumber int) Device {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // REQUIRES: A device id.
@@ -93,13 +71,7 @@ func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // EFFECTS: Returns the id.

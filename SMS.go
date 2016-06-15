@@ -20,13 +20,5 @@ func SendSMSToDevice(deviceid int, phonenumber string) SMS {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
