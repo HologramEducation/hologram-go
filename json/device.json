@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "userid": 231,
+    "name": "Unnamed Device (91590)",
+    "type": "Unknown",
+    "whencreated": "2015-03-25 03:12:13",
+    "phonenumber": "",
+    "tunnelable": 0,
+    "tags": [],
+    "links": {
+      "cellular": [
+        {
+          "id": 6,
+          "sim": "89314404000097091590",
+          "imsi": 204043251884852,
+          "carrierid": 1,
+          "state": "DEAD",
+          "whenclaimed": "2014-12-20 00:20:12",
+          "whenexpires": "2015-06-18 00:20:12",
+          "overagelimit": -1,
+          "last_network_used": "",
+          "last_connect_time": "",
+          "cur_billing_data_used": 0,
+          "apn": "internetd.gdsp (no user, no pw)",
+          "plan": {
+            "id": 28,
+            "tier": 1,
+            "name": "1 MB + 30-day FREE TRIAL",
+            "data": 1000000,
+            "cost": "1.73",
+            "overage": "2.00",
+            "sms": "0.19"
+          }
+        }
+      ]
+    }
+  }
+}
