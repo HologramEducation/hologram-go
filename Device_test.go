@@ -10,8 +10,6 @@ import (
 
 func TestGetDevice(t *testing.T) {
 
-	expectedDeviceName := "Unnamed Device (91590)"
-
 	file, e := ioutil.ReadFile("json/device.json")
 	if e != nil {
 		fmt.Printf("Error opening file: %v\n", e)
@@ -24,10 +22,45 @@ func TestGetDevice(t *testing.T) {
 	}
 	var device = (HologramGo.Device)(payload["data"].(map[string]interface{}))
 
-	fmt.Println(device.GetDeviceName())
-	deviceName := device.GetDeviceName()
+	// Check for expected device id
+	expectedFloat := (float64)(1)
+	returnedFloat := device.GetDeviceId()
+	if expectedFloat != returnedFloat {
+		t.Fatalf("Expected %s, got %s", expectedFloat, returnedFloat)
+	}
 
-	if expectedDeviceName != deviceName {
-		t.Fatalf("Expected %s, got %s", expectedDeviceName, deviceName)
+	// Check for expected device user id
+	expectedFloat = (float64)(231)
+	returnedFloat = device.GetDeviceUserId()
+	if expectedFloat != returnedFloat {
+		t.Fatalf("Expected %s, got %s", expectedFloat, returnedFloat)
+	}
+
+	// Check for expected device name
+	expected := "Unnamed Device (91590)"
+	returned := device.GetDeviceName()
+	if expected != returned {
+		t.Fatalf("Expected %s, got %s", expected, returned)
+	}
+
+	// Check for expected device type
+	expected = "Unknown"
+	returned = device.GetDeviceType()
+	if expected != returned {
+		t.Fatalf("Expected %s, got %s", expected, returned)
+	}
+
+	// Check for expected device creation date
+	expected = "2015-03-25 03:12:13"
+	returned = device.GetWhenCreated()
+	if expected != returned {
+		t.Fatalf("Expected %s, got %s", expected, returned)
+	}
+
+	// Check for expected device phone number
+	expected = ""
+	returned = device.GetPhoneNumber()
+	if expected != returned {
+		t.Fatalf("Expected %s, got %s", expected, returned)
 	}
 }
