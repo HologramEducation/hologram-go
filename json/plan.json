@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 51,
+      "partnerid": 1,
+      "name": "1 MB",
+      "description": "",
+      "data": 1000000,
+      "recurring": 1,
+      "enabled": 1,
+      "amount1": "2.34",
+      "amount2": "3.94",
+      "amount3": "5.89",
+      "amount4": "7.85",
+      "amount5": "26.52",
+      "billingperiod": 24,
+      "overage1": "0.20",
+      "overage2": "0.55",
+      "overage3": "0.98",
+      "overage4": "1.41",
+      "overage5": "5.48",
+      "sms1": "0.19",
+      "sms2": "0.30",
+      "sms3": "0.31",
+      "sms4": "0.46",
+      "sms5": "0.55",
+      "trialdays": 0,
+      "templateid": 0,
+      "carrierid": 1,
+      "groupid": 0
+    }
+  ]
+}
