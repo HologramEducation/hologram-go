@@ -14,7 +14,7 @@ func SendSMSToDevice(deviceid int, phonenumber string) SMS {
 	var params Parameters
 	req := createPostRequest("/sms/incoming", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)

@@ -17,7 +17,7 @@ func CreateUser(id int) User {
 	var params Parameters
 	req := createPostRequest("/users/", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -37,7 +37,7 @@ func GetUserAccountDetails(id int) User {
 
 	req := createGetRequest("/users/" + strconv.Itoa(id));
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -61,7 +61,7 @@ func ChangeUserPassword(password string) User {
 	var params Parameters
 	req := createPostRequest("/users/me/password/", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -83,7 +83,7 @@ func GetUserAddresses() User {
 
 	req := createGetRequest("/users/me/addresses")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -106,7 +106,7 @@ func AddUserAddress() User {
 	var params Parameters
 	req := createPostRequest("/users/me/addresses", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -127,7 +127,7 @@ func GetAPIKey() User {
 
 	req := createGetRequest("/users/me/apikey")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -149,7 +149,7 @@ func GenerateNewAPIKey() User {
 	var params Parameters
 	req := createPostRequest("/users/me/apikey", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)

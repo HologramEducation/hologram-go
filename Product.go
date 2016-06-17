@@ -16,7 +16,7 @@ func GetProducts() Product {
 
 	req := createGetRequest("/products/")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -40,7 +40,7 @@ func GetProduct(id int) Product {
 
 	req := createGetRequest("/products/" + strconv.Itoa(id))
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -54,7 +54,7 @@ func GetProductCategories() Product {
 
 	req := createGetRequest("/products/categories/")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -68,7 +68,7 @@ func GetProductOptions() Product {
 
 	req := createGetRequest("/products/options/")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)

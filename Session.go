@@ -14,7 +14,7 @@ func (session Session) CreateSession(email string, password string) {
 	var params Parameters
 	req := createPostRequest("/auth/session", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -40,7 +40,7 @@ func (session Session) EndSession(sesskey string) {
 	var params Parameters
 	req := createPostRequest("/auth/sessiondestroy", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)

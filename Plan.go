@@ -15,7 +15,7 @@ func GetDeviceDataPlans() Plan {
 
 	req := createGetRequest("/plans/")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -38,7 +38,7 @@ func GetDeviceDataPlan(planid string) Plan {
 
 	req := createGetRequest("/plans/" + string(planid))
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)

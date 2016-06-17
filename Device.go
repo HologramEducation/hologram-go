@@ -17,7 +17,7 @@ func GetDevices() Device {
 
 	req := createGetRequest("/devices")
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -32,7 +32,7 @@ func GetDevice(deviceid int) Device {
 
 	req := createGetRequest("/devices/" + strconv.Itoa(deviceid))
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
@@ -44,12 +44,12 @@ func GetDevice(deviceid int) Device {
 
 // REQUIRES: A sim number.
 // EFFECTS: Claim ownership and activate the given device.
-func ClaimOwnershipAndActiveDevice(simnumber int) Device {
+func ClaimOwnershipAndActivateDevice(simnumber int) Device {
 
 	var params Parameters
-	req := createPostRequest("/cellular/sim_" + strconv.Itoa(simnumber), params)
+	req := createPostRequest("/cellular/sim_" + strconv.Itoa(simnumber) + "/claim", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
@@ -65,7 +65,7 @@ func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 	var params Parameters
 	req := createPostRequest("/devices/" + strconv.Itoa(deviceid) + "/addnumber", params)
 
-	resp, err := SendRequest(req)
+	resp, err := sendRequest(req)
 	if err != nil {
 		fmt.Printf("Could not send request: %v\n", err)
 		os.Exit(1)
