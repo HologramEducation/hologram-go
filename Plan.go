@@ -3,15 +3,17 @@ package HologramGo
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 type Plan map[string]interface{}
 
 // Plans is just a list of Plan(s).
-type Plans []Plan
+type Plans []interface{}
 
+// TODO: Add Plans data type for this call here.
 // EFFECTS: Returns device data plans.
-func GetDeviceDataPlans() Plan {
+func GetDeviceDataPlans() Plans {
 
 	req := createGetRequest("/plans/")
 
@@ -29,14 +31,14 @@ func GetDeviceDataPlans() Plan {
 		os.Exit(1)
 	}
 
-	return payload["data"].(map[string]interface{})
+	return payload["data"].([]interface{})
 }
 
 // REQUIRES: A plan id.
 // EFFECTS: Returns a given device data plan
-func GetDeviceDataPlan(planid string) Plan {
+func GetDeviceDataPlan(planid int) Plan {
 
-	req := createGetRequest("/plans/" + string(planid))
+	req := createGetRequest("/plans/" + strconv.Itoa(planid))
 
 	resp, err := sendRequest(req)
 	if err != nil {
@@ -52,65 +54,67 @@ func GetDeviceDataPlan(planid string) Plan {
 		os.Exit(1)
 	}
 
-	return payload["data"].(map[string]interface{})
+	plans := payload["data"].([]interface{})
+
+	return (Plan)(plans[0].(map[string]interface{}))
 }
 
 // EFFECTS: Returns the data plan id.
-func (plan Plan) GetDataPlanId(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanId() float64 {
 	return plan["id"].(float64)
 }
 
 // EFFECTS: Returns the data plan partner id.
-func (plan Plan) GetDataPlanPartnerId(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanPartnerId() float64 {
 	return plan["partnerid"].(float64)
 }
 
 // EFFECTS: Returns the data plan name.
-func (plan Plan) GetDataPlanName(map[string]interface{}) string {
+func (plan Plan) GetDataPlanName() string {
 	return plan["name"].(string)
 }
 
 // EFFECTS: Returns the data plan description.
-func (plan Plan) GetDataPlanDescription(map[string]interface{}) string {
+func (plan Plan) GetDataPlanDescription() string {
 	return plan["description"].(string)
 }
 
 // EFFECTS: Returns the data size.
-func (plan Plan) GetDataPlanSize(map[string]interface{}) float64 {
-	return plan["size"].(float64)
+func (plan Plan) GetDataPlanSize() float64 {
+	return plan["data"].(float64)
 }
 
 // EFFECTS: Returns true if it is recurring.
-func (plan Plan) IsDataPlanRecurring(map[string]interface{}) bool {
+func (plan Plan) IsDataPlanRecurring() bool {
 	return plan["recurring"].(bool)
 }
 
 // EFFECTS: Returns true if the data plan is enabled.
-func (plan Plan) IsDataPlanEnabled(map[string]interface{}) bool {
+func (plan Plan) IsDataPlanEnabled() bool {
 	return plan["enabled"].(bool)
 }
 
 // EFFECTS: Returns the billing period.
-func (plan Plan) GetDataPlanBillingPeriod(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanBillingPeriod() float64 {
 	return plan["billingperiod"].(float64)
 }
 
 // EFFECTS: Returns the number of trial days left.
-func (plan Plan) GetDataPlanTrialDays(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanTrialDays() float64 {
 	return plan["traildays"].(float64)
 }
 
 // EFFECTS: Returns the data plan template id.
-func (plan Plan) GetDataPlanTemplateId(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanTemplateId() float64 {
 	return plan["templateid"].(float64)
 }
 
 // EFFECTS: Returns the carrier id of the data plan.
-func (plan Plan) GetDataPlanCarrierId(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanCarrierId() float64 {
 	return plan["carrierid"].(float64)
 }
 
 // EFFECTS: Returns the groupid of the data plan.
-func (plan Plan) GetDataPlanGroupId(map[string]interface{}) float64 {
+func (plan Plan) GetDataPlanGroupId() float64 {
 	return plan["groupid"].(float64)
 }
