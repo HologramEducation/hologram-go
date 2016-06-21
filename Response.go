@@ -39,6 +39,20 @@ func unmarshallIntoObject(resp *Response) map[string]interface{} {
 	return payload["data"].(map[string]interface{})
 }
 
+// EFFECTS: Takes in the response and unmarshalls into an array object.
+func unmarshallIntoArrayObject(resp *Response) []interface{} {
+
+	var payload = Placeholder{}
+	err = resp.Parse(&payload)
+	// error handling
+	if err != nil {
+		fmt.Printf("Problem parsing response: %v\n", err)
+		os.Exit(1)
+	}
+
+	return payload["data"].([]interface{})
+}
+
 type Response http.Response
 
 func (response Response) parseBody() (b []byte, err error) {

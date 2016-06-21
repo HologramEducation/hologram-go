@@ -23,15 +23,7 @@ func GetDeviceDataPlans() Plans {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].([]interface{})
+	return unmarshallIntoArrayObject(resp)
 }
 
 // REQUIRES: A plan id.
@@ -46,15 +38,7 @@ func GetDeviceDataPlan(planid int) Plan {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	plans := payload["data"].([]interface{})
+	plans := unmarshallIntoArrayObject(resp)
 
 	return (Plan)(plans[0].(map[string]interface{}))
 }
