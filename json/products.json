@@ -1,0 +1,224 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "sku": "SIM",
+      "name": "SIM Card",
+      "description": "The Hologram Global SIM Card. Comes in a variety of sizes for any application. (Pick your data plan when you go to activate the SIM.)",
+      "price": "5.00",
+      "imageurl": "https://dashboard.hologram.io/img/sim_card.jpg",
+      "invoice_description": "Global SIM Card",
+      "preorder_details": "",
+      "options": [
+        {
+          "id": 17,
+          "appendsku": "N2-2FF3FF4FF",
+          "pricechange": "0.00",
+          "description": "Combo Mini/Micro/Nano SIM"
+        }
+      ],
+      "categories": [
+        "cellular"
+      ]
+    },
+    {
+      "id": 3,
+      "sku": "RE",
+      "name": "Dash",
+      "description": "*SHIPS IN TWO WEEKS* A tiny cellular development kit; pairs perfectly with Hologram Cloud and SIM. Order a Hologram Dash for your next cellular project! SIM included.",
+      "price": "59.00",
+      "imageurl": "https://dashboard.hologram.io/img/dash.jpg",
+      "invoice_description": "Konekt Dash dev kit",
+      "preorder_details": "",
+      "options": [
+        {
+          "id": 22,
+          "appendsku": "DASH260",
+          "pricechange": "0.00",
+          "description": "Americas 850/1900 MHz 3G (SU260)"
+        },
+        {
+          "id": 21,
+          "appendsku": "DASH270",
+          "pricechange": "0.00",
+          "description": "Europe/Asia 2100MHz 3G (SU270)"
+        }
+      ],
+      "categories": [
+        "cellular"
+      ]
+    },
+    {
+      "id": 4,
+      "sku": "RE-DASHPRO",
+      "name": "Dash Pro",
+      "description": "Heavy-duty features like military grade end-to-end SSL encryption and world-wide cellular certification. SIM included.",
+      "price": "69.00",
+      "imageurl": "https://dashboard.hologram.io/img/dash_pro.jpg",
+      "invoice_description": "Konekt Dash Pro dev kit",
+      "preorder_details": "",
+      "options": [],
+      "categories": [
+        "cellular"
+      ]
+    },
+    {
+      "id": 6,
+      "sku": "HUA",
+      "name": "Huawei E303 Cellular USB Modem",
+      "description": "*EU/Asia out of stock* These unlocked 3G cellular modems are great for doing a quick cellular test on your laptop or even to hook up your Raspberry Pi or BeagleBone. Accepts a mini SIM card. (See tutorials on our blog)",
+      "price": "28.00",
+      "imageurl": "https://dashboard.hologram.io/img/huawei-e303.jpg",
+      "invoice_description": "Huawei E303 Cellular Modem",
+      "preorder_details": "",
+      "options": [
+        {
+          "id": 5,
+          "appendsku": "E303US",
+          "pricechange": "0.00",
+          "description": "North America 850/1900 MHz 3G"
+        }
+      ],
+      "categories": [
+        "cellular"
+      ]
+    },
+    {
+      "id": 7,
+      "sku": "BAT-LIPO2000",
+      "name": "Battery for Dash and Dash Pro",
+      "description": "Grab one of these 3.7v 2000 mAh LiPo batteries to run your Dash completely free of wall outlets or USBs",
+      "price": "10.00",
+      "imageurl": "https://dashboard.hologram.io/img/battery.jpg",
+      "invoice_description": "Battery",
+      "preorder_details": "",
+      "options": [],
+      "categories": [
+        "accessories"
+      ]
+    },
+    {
+      "id": 8,
+      "sku": "ANT-DUCK",
+      "name": "Duck Antenna",
+      "description": "Improve the range of your Dash or Dash Pro with this Duck Antenna",
+      "price": "15.00",
+      "imageurl": "https://dashboard.hologram.io/img/duck_antenna.jpg",
+      "invoice_description": "Duck Antenna",
+      "preorder_details": "",
+      "options": [],
+      "categories": [
+        "accessories"
+      ]
+    },
+    {
+      "id": 9,
+      "sku": "SHLDSHLD-V1",
+      "name": "Shield Shield",
+      "description": "The Shield Shield converts the footprint and pins of your Dash or Dash Pro into that of an Arduino, allowing for use of existing Arduino shields and accessories.",
+      "price": "20.00",
+      "imageurl": "https://dashboard.hologram.io/img/shield_shield.jpg",
+      "invoice_description": "Shield Shield",
+      "preorder_details": "",
+      "options": [],
+      "categories": [
+        "accessories"
+      ]
+    },
+    {
+      "id": 10,
+      "sku": "MAGRELAY-V1",
+      "name": "Magnetic Relay Shield",
+      "description": "Control any normal outlet or high voltage product from anywhere.",
+      "price": "40.00",
+      "imageurl": "https://dashboard.hologram.io/img/relay_shield.jpg",
+      "invoice_description": "Magnetic Relay Shield",
+      "preorder_details": "",
+      "options": [],
+      "categories": [
+        "accessories"
+      ]
+    },
+    {
+      "id": 12,
+      "sku": "RE",
+      "name": "Dash Asset Tracker Kit",
+      "description": "*SHIPS IN TWO WEEKS* Use this combination of GPS shield and Dash or Dash Pro build your very own Asset Tracker",
+      "price": "119.00",
+      "imageurl": "https://dashboard.hologram.io/img/asset_tracker_kit.jpg",
+      "invoice_description": "Asset Tracker Kit",
+      "preorder_details": "",
+      "options": [
+        {
+          "id": 25,
+          "appendsku": "ASSET270",
+          "pricechange": "0.00",
+          "description": "Dash EU/AS 2100MHz 3G (SU270)"
+        },
+        {
+          "id": 6,
+          "appendsku": "ASSET260",
+          "pricechange": "0.00",
+          "description": "Dash NA/SA 850/1900 3G (SU260)"
+        },
+        {
+          "id": 7,
+          "appendsku": "ASSETPRO",
+          "pricechange": "10.00",
+          "description": "Dash Pro"
+        }
+      ],
+      "categories": [
+        "devkits"
+      ]
+    },
+    {
+      "id": 13,
+      "sku": "RE",
+      "name": "Dash Sensor Kit",
+      "description": "Includes all the sensors you could ever want. Temperature, Motion, Air Quality, Sound, Acceleration, Vibration, this one has it all! Includes a Hologram Dash, all of the sensors, and a Hologram SIM.",
+      "price": "139.00",
+      "imageurl": "https://dashboard.hologram.io/img/sensor_kit.jpg",
+      "invoice_description": "Sensor Kit",
+      "preorder_details": "",
+      "options": [
+        {
+          "id": 9,
+          "appendsku": "SENSOR270",
+          "pricechange": "0.00",
+          "description": "Dash EU/AS 2100MHz 3G (SU2270)"
+        },
+        {
+          "id": 8,
+          "appendsku": "SENSOR260",
+          "pricechange": "0.00",
+          "description": "Dash NA/SA 850/1900 3G (SU260)"
+        },
+        {
+          "id": 23,
+          "appendsku": "SENSORPRO",
+          "pricechange": "10.00",
+          "description": "Dash Pro (LU200)"
+        }
+      ],
+      "categories": [
+        "devkits"
+      ]
+    },
+    {
+      "id": 23,
+      "sku": "USBYCABLE",
+      "name": "USB Y-Cable",
+      "description": "Some computers don't provide enough power to their USB ports to power the Dash. Use this cable to supplement it if you're having trouble. (2 USB A Male to 1 USB Micro Male)",
+      "price": "5.00",
+      "imageurl": "https://dashboard.hologram.io/img/y_cable.jpg",
+      "invoice_description": "USB Y-Cable",
+      "preorder_details": "",
+      "options": [],
+      "categories": [
+        "accessories"
+      ]
+    }
+  ]
+}

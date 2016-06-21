@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "sku": "SIM",
+    "name": "SIM Card",
+    "description": "The Hologram Global SIM Card. Comes in a variety of sizes for any application. (Pick your data plan when you go to activate the SIM.)",
+    "price": "5.00",
+    "imageurl": "https://dashboard.hologram.io/img/sim_card.jpg",
+    "invoice_description": "Global SIM Card",
+    "preorder_details": "",
+    "options": [
+      {
+        "id": 17,
+        "appendsku": "N2-2FF3FF4FF",
+        "pricechange": "0.00",
+        "description": "Combo Mini/Micro/Nano SIM"
+      }
+    ],
+    "categories": [
+      "cellular"
+    ]
+  }
+}
