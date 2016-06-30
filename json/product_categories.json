@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "data": [
+    {
+      "category": "accessories",
+      "productids": [
+        15,
+        19,
+        11,
+        10,
+        9,
+        8,
+        7,
+        23
+      ]
+    },
+    {
+      "category": "cellular",
+      "productids": [
+        20,
+        21,
+        18,
+        17,
+        1,
+        24,
+        6,
+        4,
+        3
+      ]
+    },
+    {
+      "category": "devkits",
+      "productids": [
+        16,
+        14,
+        12,
+        13
+      ]
+    }
+  ]
+}
