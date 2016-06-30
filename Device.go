@@ -74,6 +74,10 @@ func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 	return unmarshallIntoObject(resp)
 }
 
+///////////////////////////////////////////////////
+// GENERIC DEVICE GETTER FUNCTIONS
+///////////////////////////////////////////////////
+
 // EFFECTS: Returns the id.
 func (device Device) GetDeviceId() float64 {
 	return device["id"].(float64)

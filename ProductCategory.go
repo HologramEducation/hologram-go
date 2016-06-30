@@ -24,7 +24,7 @@ func GetProductCategories() ProductCategories {
 }
 
 ///////////////////////////////////////////////////
-// PRODUCT CATEGORIES GETTER FUNCTIONS
+// GENERIC PRODUCT CATEGORIES GETTER FUNCTIONS
 ///////////////////////////////////////////////////
 
 func (productCategory ProductCategory) GetProductCategoryName() string {

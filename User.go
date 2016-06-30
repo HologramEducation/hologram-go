@@ -165,6 +165,10 @@ func GenerateNewAPIKey() User {
 	return payload["data"].(map[string]interface{})
 }
 
+///////////////////////////////////////////////////
+// GENERIC USER GETTER FUNCTIONS
+///////////////////////////////////////////////////
+
 func (user User) GetUserFirstName() string {
 	return user["first"].(string)
 }
