@@ -8,11 +8,10 @@ import (
 
 type Product map[string]interface{}
 
-type Products []Product
+type Products []interface{}
 
-// TODO: Change the return type.
 // EFFECTS: Returns product details.
-func GetProducts() Product {
+func GetProducts() Products {
 
 	req := createGetRequest("/products/")
 
@@ -22,16 +21,7 @@ func GetProducts() Product {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
-	return unmarshallIntoObject(resp)
+	return unmarshallIntoArrayObject(resp)
 }
 
 // REQUIRES: a product id.
@@ -49,33 +39,9 @@ func GetProduct(id int) Product {
 	return unmarshallIntoObject(resp)
 }
 
-// EFFECTS: Returns product categories.
-func GetProductCategories() Product {
-
-	req := createGetRequest("/products/categories/")
-
-	resp, err := sendRequest(req)
-	if err != nil {
-		fmt.Printf("Could not send request: %v\n", err)
-		os.Exit(1)
-	}
-
-	return unmarshallIntoObject(resp)
-}
-
-// EFFECTS: Returns product options.
-func GetProductOptions() Product {
-
-	req := createGetRequest("/products/options/")
-
-	resp, err := sendRequest(req)
-	if err != nil {
-		fmt.Printf("Could not send request: %v\n", err)
-		os.Exit(1)
-	}
-
-	return unmarshallIntoObject(resp)
-}
+///////////////////////////////////////////////////
+// GENERIC PRODUCT GETTER FUNCTIONS
+///////////////////////////////////////////////////
 
 // EFFECTS: Returns the id of the product.
 func (product Product) GetProductId() float64 {
