@@ -89,7 +89,7 @@ func (plan Plan) GetDataPlanBillingPeriod() float64 {
 
 // EFFECTS: Returns the number of trial days left.
 func (plan Plan) GetDataPlanTrialDays() float64 {
-	return plan["traildays"].(float64)
+	return plan["trialdays"].(float64)
 }
 
 // EFFECTS: Returns the data plan template id.
