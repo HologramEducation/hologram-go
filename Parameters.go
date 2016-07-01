@@ -1,6 +1,6 @@
 package HologramGo
 
 type Parameters struct {
-	items []string
+	items  []string
 	values []string
 }

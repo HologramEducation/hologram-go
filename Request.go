@@ -3,21 +3,21 @@ package HologramGo
 // This file contains all HTTP Response related behavior.
 
 import (
+	"encoding/json"
+	"fmt"
 	"golang.org/x/net/publicsuffix"
-	"net/http/cookiejar"
+	"io/ioutil"
+	"log"
 	"net/http"
+	"net/http/cookiejar"
 	"net/url"
 	"os"
-	"io/ioutil"
-	"encoding/json"
 	"strings"
-	"fmt"
-	"log"
 )
 
 const HOLOGRAM_REST_API_BASEURL = "https://dashboard.hologram.io/api/1"
 
-var err	error
+var err error
 
 // These two variables will store user's username and password.
 var username string
@@ -44,7 +44,7 @@ func InitializeUsernameAndPassword(credentialFile string) {
 // EFFECTS: Sends a HTTP request through this instance's HTTP client.
 func sendRequest(req *http.Request) (response *Response, err error) {
 
-	options := cookiejar.Options {
+	options := cookiejar.Options{
 		PublicSuffixList: publicsuffix.List,
 	}
 
@@ -53,7 +53,7 @@ func sendRequest(req *http.Request) (response *Response, err error) {
 		log.Fatal(err)
 	}
 
-	client := &http.Client {
+	client := &http.Client{
 		Jar: jar,
 	}
 
@@ -68,7 +68,7 @@ func sendRequest(req *http.Request) (response *Response, err error) {
 // EFFECTS: Creates and populates a HTTP GET request.
 func createGetRequest(derivedUrl string) (req *http.Request) {
 
-	req, err = http.NewRequest("GET", HOLOGRAM_REST_API_BASEURL + derivedUrl, nil)
+	req, err = http.NewRequest("GET", HOLOGRAM_REST_API_BASEURL+derivedUrl, nil)
 	if err != nil {
 		fmt.Printf("Could not parse request: %v\n", err)
 		os.Exit(1)
@@ -91,7 +91,7 @@ func createPostRequest(derivedUrl string, params Parameters) (req *http.Request)
 
 	body := strings.NewReader(data.Encode())
 
-	req, err = http.NewRequest("POST", HOLOGRAM_REST_API_BASEURL + derivedUrl, body)
+	req, err = http.NewRequest("POST", HOLOGRAM_REST_API_BASEURL+derivedUrl, body)
 	fmt.Println(HOLOGRAM_REST_API_BASEURL + derivedUrl)
 	if err != nil {
 		fmt.Printf("Could not parse request: %v\n", err)

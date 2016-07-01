@@ -28,7 +28,7 @@ func CreateUser(id int) User {
 
 func GetUserAccountDetails(id int) User {
 
-	req := createGetRequest("/users/" + strconv.Itoa(id));
+	req := createGetRequest("/users/" + strconv.Itoa(id))
 
 	resp, err := sendRequest(req)
 	if err != nil {
@@ -38,7 +38,6 @@ func GetUserAccountDetails(id int) User {
 
 	return unmarshallIntoObject(resp)
 }
-
 
 // REQUIRES: a new password from the user.
 // EFFECTS: Changes the user's password
@@ -55,7 +54,6 @@ func ChangeUserPassword(password string) User {
 
 	return unmarshallIntoObject(resp)
 }
-
 
 // EFFECTS: Retrieve user addresses.
 func GetUserAddresses() User {

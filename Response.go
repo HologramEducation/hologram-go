@@ -3,11 +3,11 @@ package HologramGo
 // This file contains all HTTP Response related behavior.
 
 import (
-	"io"
-	"net/http"
 	"encoding/json"
-	"io/ioutil"
 	"fmt"
+	"io"
+	"io/ioutil"
+	"net/http"
 	"os"
 )
 
@@ -95,7 +95,7 @@ func (response Response) parsePayload(out interface{}) (err error) {
 			err = *e
 		}
 	} else if statusCode == STATUS_CREATED || statusCode == STATUS_ACCEPTED ||
-			statusCode == STATUS_OK {
+		statusCode == STATUS_OK {
 		b, err = response.parseBody()
 		if err != nil {
 			return err

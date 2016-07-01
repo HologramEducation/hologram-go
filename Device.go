@@ -46,7 +46,7 @@ func GetDevice(deviceid int) Device {
 func ClaimOwnershipAndActivateDevice(simnumber int) Device {
 
 	var params Parameters
-	req := createPostRequest("/cellular/sim_" + strconv.Itoa(simnumber) + "/claim", params)
+	req := createPostRequest("/cellular/sim_"+strconv.Itoa(simnumber)+"/claim", params)
 
 	resp, err := sendRequest(req)
 	if err != nil {
@@ -62,7 +62,7 @@ func ClaimOwnershipAndActivateDevice(simnumber int) Device {
 func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 
 	var params Parameters
-	req := createPostRequest("/devices/" + strconv.Itoa(deviceid) + "/addnumber", params)
+	req := createPostRequest("/devices/"+strconv.Itoa(deviceid)+"/addnumber", params)
 
 	resp, err := sendRequest(req)
 	if err != nil {
