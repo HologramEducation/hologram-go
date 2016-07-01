@@ -5,10 +5,13 @@ import (
 	"os"
 )
 
+// ProductOption implements the product option returned from the response.
 type ProductOption map[string]interface{}
+
+// ProductOptions is just a list of ProductOption(s)
 type ProductOptions []interface{}
 
-// EFFECTS: Returns product options.
+// GetProductOptions returns product options.
 func GetProductOptions() ProductOptions {
 
 	req := createGetRequest("/products/options/")
@@ -26,26 +29,27 @@ func GetProductOptions() ProductOptions {
 // PRODUCT OPTION GETTER FUNCTIONS
 ///////////////////////////////////////////////////
 
+// GetProductIdFromOption returns the product id.
 func (productOption ProductOption) GetProductIdFromOption() float64 {
 	return productOption["productid"].(float64)
 }
 
-// EFFECTS: Returns the sku of the product option.
+// GetProductOptionAppendSku returns the sku of the product option.
 func (productOption ProductOption) GetProductOptionAppendSku() string {
 	return productOption["appendsku"].(string)
 }
 
-// EFFECTS: Returns the price change of the product option.
+// GetProductOptionPriceChang returns the price change of the product option.
 func (productOption ProductOption) GetProductOptionPriceChange() string {
 	return productOption["pricechange"].(string)
 }
 
-// EFFECTS: Returns the description of the product option.
+// GetProductOptionDescription returns the description of the product option.
 func (productOption ProductOption) GetProductOptionDescription() string {
 	return productOption["description"].(string)
 }
 
-// EFFECTS: Returns the invoice description of the product option.
+// GetProductOptionInvoiceDescription returns the invoice description of the product option.
 func (productOption ProductOption) GetProductOptionInvoiceDescription() string {
 	return productOption["invoice_description"].(string)
 }

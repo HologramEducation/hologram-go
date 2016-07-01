@@ -5,10 +5,10 @@ import (
 	"os"
 )
 
+// Session implements the Session type returned from the response.
 type Session map[string]interface{}
 
-// REQUIRES: a device id.
-// EFFECTS: Creates a new session.
+// CreateSession creates a new session.
 func CreateSession(email string, password string) Session {
 
 	var params Parameters
@@ -25,8 +25,7 @@ func CreateSession(email string, password string) Session {
 
 // TODO: func (session Session) end // without sesskey.
 
-// REQUIRES: A session key.
-// EFFECTS; Destroys a session based on the given sesskey.
+// EndSession destroys a session based on the given sesskey.
 func EndSession(sesskey string) Session {
 
 	var params Parameters

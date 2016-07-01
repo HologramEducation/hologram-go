@@ -8,6 +8,8 @@ import (
 
 // Users is just a list of User(s).
 type Users []User
+
+// User implements the User type returned from the response.
 type User map[string]interface{}
 
 // CreateUser makes a HTTP Post call to create a new user.

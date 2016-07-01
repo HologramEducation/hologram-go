@@ -5,10 +5,10 @@ import (
 	"os"
 )
 
+// SMS implements the SMS type returned from the response.
 type SMS map[string]interface{}
 
-// REQUIRES: a device id and a phone number.
-// EFFECTS: Sends an SMS to a device and returns the response
+// SendSMSToDevice sends an SMS to a device and returns the response.
 func SendSMSToDevice(deviceid int, phonenumber string) SMS {
 
 	var params Parameters
