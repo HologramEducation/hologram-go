@@ -5,7 +5,6 @@ package HologramGo
 import (
 	"encoding/json"
 	"fmt"
-	"golang.org/x/net/publicsuffix"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,6 +12,8 @@ import (
 	"net/url"
 	"os"
 	"strings"
+
+	"golang.org/x/net/publicsuffix"
 )
 
 const HOLOGRAM_REST_API_BASEURL = "https://dashboard.hologram.io/api/1"

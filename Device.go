@@ -6,12 +6,13 @@ import (
 	"strconv"
 )
 
+// Device object returned in the response.
 type Device map[string]interface{}
 
 // Devices is just a list of Device(s).
 type Devices []interface{}
 
-// EFFECTS: Returns device details.
+// GetDevices returns device details.
 func GetDevices() Devices {
 
 	req := createGetRequest("/devices")
@@ -25,8 +26,7 @@ func GetDevices() Devices {
 	return unmarshallIntoArrayObject(resp)
 }
 
-// REQUIRES: a device id.
-// EFFECTS: Returns device details.
+// GetDevice returns a device detail based on the given deviceid.
 func GetDevice(deviceid int) Device {
 
 	req := createGetRequest("/devices/" + strconv.Itoa(deviceid))
@@ -41,8 +41,7 @@ func GetDevice(deviceid int) Device {
 	return unmarshallIntoObject(resp)
 }
 
-// REQUIRES: A sim number.
-// EFFECTS: Claim ownership and activate the given device.
+// ClaimOwnershipAndActivateDevice claims ownership and activate the given device.
 func ClaimOwnershipAndActivateDevice(simnumber int) Device {
 
 	var params Parameters
@@ -57,8 +56,7 @@ func ClaimOwnershipAndActivateDevice(simnumber int) Device {
 	return unmarshallIntoObject(resp)
 }
 
-// REQUIRES: A device id.
-// EFFECTS: Purchase and assign a phone number to the device.
+// PurchaseAndAssignPhoneNumberToDevice purchases and assigns a phone number to the device.
 func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 
 	var params Parameters
@@ -77,37 +75,37 @@ func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 // GENERIC DEVICE GETTER FUNCTIONS
 ///////////////////////////////////////////////////
 
-// EFFECTS: Returns the id.
+// GetDeviceId returns the id.
 func (device Device) GetDeviceId() float64 {
 	return device["id"].(float64)
 }
 
-// EFFECTS: Returns the user id.
+// GetDeviceUserId returns the user id.
 func (device Device) GetDeviceUserId() float64 {
 	return device["userid"].(float64)
 }
 
-// EFFECTS: Returns the device name.
+// GetDeviceName returns the device name.
 func (device Device) GetDeviceName() string {
 	return device["name"].(string)
 }
 
-// EFFECTS: Returns the device type.
+// GetDeviceType returns the device type.
 func (device Device) GetDeviceType() string {
 	return device["type"].(string)
 }
 
-// TODO: Handle as Time type
+// GetWhenCreated returns a UNIX timestamp of the creation time.
 func (device Device) GetWhenCreated() string {
 	return device["whencreated"].(string)
 }
 
-// EFFECTS: Returns a phone number.
+// GetPhoneNumber returns a phone number.
 func (device Device) GetPhoneNumber() string {
 	return device["phonenumber"].(string)
 }
 
-// EFFECTS: Returns true if it is tunnelable.
+// GetTunnelable returns true if it is tunnelable.
 func (device Device) GetTunnelable() bool {
 	return device["tunnelable"].(bool)
 }
