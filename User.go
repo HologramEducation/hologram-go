@@ -23,14 +23,7 @@ func CreateUser(id int) User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 func GetUserAccountDetails(id int) User {
@@ -43,14 +36,7 @@ func GetUserAccountDetails(id int) User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 
@@ -67,14 +53,7 @@ func ChangeUserPassword(password string) User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 
@@ -89,14 +68,7 @@ func GetUserAddresses() User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // REQUIRES: The address.
@@ -112,14 +84,7 @@ func AddUserAddress() User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // EFFECTS: Returns the user's API key.
@@ -133,14 +98,7 @@ func GetAPIKey() User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 // EFFECTS: Generates a new API key.
@@ -155,14 +113,7 @@ func GenerateNewAPIKey() User {
 		os.Exit(1)
 	}
 
-	var payload = Placeholder{}
-	err = resp.Parse(&payload)
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	return payload["data"].(map[string]interface{})
+	return unmarshallIntoObject(resp)
 }
 
 ///////////////////////////////////////////////////

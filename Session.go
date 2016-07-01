@@ -9,7 +9,7 @@ type Session map[string]interface{}
 
 // REQUIRES: a device id.
 // EFFECTS: Creates a new session.
-func (session Session) CreateSession(email string, password string) {
+func CreateSession(email string, password string) Session {
 
 	var params Parameters
 	req := createPostRequest("/auth/session", params)
@@ -20,22 +20,14 @@ func (session Session) CreateSession(email string, password string) {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&Session{})
-
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	fmt.Println("Done creating session..");
+	return unmarshallIntoObject(resp)
 }
 
 // TODO: func (session Session) end // without sesskey.
 
 // REQUIRES: A session key.
 // EFFECTS; Destroys a session based on the given sesskey.
-func (session Session) EndSession(sesskey string) {
+func EndSession(sesskey string) Session {
 
 	var params Parameters
 	req := createPostRequest("/auth/sessiondestroy", params)
@@ -46,13 +38,5 @@ func (session Session) EndSession(sesskey string) {
 		os.Exit(1)
 	}
 
-	err = resp.Parse(&Session{})
-
-	// error handling
-	if err != nil {
-		fmt.Printf("Problem parsing response: %v\n", err)
-		os.Exit(1)
-	}
-
-	fmt.Println("Done creating session..");
+	return unmarshallIntoObject(resp)
 }

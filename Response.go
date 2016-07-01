@@ -29,7 +29,7 @@ const (
 func unmarshallIntoObject(resp *Response) map[string]interface{} {
 
 	var payload = Placeholder{}
-	err = resp.Parse(&payload)
+	err = resp.parsePayload(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
@@ -43,7 +43,7 @@ func unmarshallIntoObject(resp *Response) map[string]interface{} {
 func unmarshallIntoArrayObject(resp *Response) []interface{} {
 
 	var payload = Placeholder{}
-	err = resp.Parse(&payload)
+	err = resp.parsePayload(&payload)
 	// error handling
 	if err != nil {
 		fmt.Printf("Problem parsing response: %v\n", err)
@@ -71,7 +71,7 @@ func (response Response) parseBody() (b []byte, err error) {
 }
 
 // EFFECTS: Populates the given object based on the returned response
-func (response Response) Parse(out interface{}) (err error) {
+func (response Response) parsePayload(out interface{}) (err error) {
 
 	var b []byte
 
