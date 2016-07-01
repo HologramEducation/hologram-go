@@ -10,8 +10,7 @@ import (
 type Users []User
 type User map[string]interface{}
 
-// REQUIRES: a device id.
-// EFFECTS: Makes a HTTP Post call to create a new user.
+// CreateUser makes a HTTP Post call to create a new user.
 func CreateUser(id int) User {
 
 	var params Parameters
@@ -26,6 +25,7 @@ func CreateUser(id int) User {
 	return unmarshallIntoObject(resp)
 }
 
+// GetUserAccountDetails returns the user's account details based on the given userid.
 func GetUserAccountDetails(id int) User {
 
 	req := createGetRequest("/users/" + strconv.Itoa(id))
@@ -39,8 +39,7 @@ func GetUserAccountDetails(id int) User {
 	return unmarshallIntoObject(resp)
 }
 
-// REQUIRES: a new password from the user.
-// EFFECTS: Changes the user's password
+// ChangeUserPassword changes the user's password.
 func ChangeUserPassword(password string) User {
 
 	var params Parameters
@@ -55,7 +54,7 @@ func ChangeUserPassword(password string) User {
 	return unmarshallIntoObject(resp)
 }
 
-// EFFECTS: Retrieve user addresses.
+// GetUserAddresses retrieves user addresses.
 func GetUserAddresses() User {
 
 	req := createGetRequest("/users/me/addresses")
@@ -69,8 +68,7 @@ func GetUserAddresses() User {
 	return unmarshallIntoObject(resp)
 }
 
-// REQUIRES: The address.
-// EFFECTS: Adds a new address to the user.
+// AddUserAddress adds a new address to the user.
 func AddUserAddress() User {
 
 	var params Parameters
@@ -85,7 +83,7 @@ func AddUserAddress() User {
 	return unmarshallIntoObject(resp)
 }
 
-// EFFECTS: Returns the user's API key.
+// GetAPIKey returns the user's API key.
 func GetAPIKey() User {
 
 	req := createGetRequest("/users/me/apikey")
@@ -99,7 +97,7 @@ func GetAPIKey() User {
 	return unmarshallIntoObject(resp)
 }
 
-// EFFECTS: Generates a new API key.
+// GenerateNewAPIKey generates a new API key.
 func GenerateNewAPIKey() User {
 
 	var params Parameters
@@ -118,19 +116,22 @@ func GenerateNewAPIKey() User {
 // GENERIC USER GETTER FUNCTIONS
 ///////////////////////////////////////////////////
 
+// GetUserFirstName returns the first name of the given user.
 func (user User) GetUserFirstName() string {
 	return user["first"].(string)
 }
 
+// GetUserLastName returns the last name of the given user.
 func (user User) GetUserLastName() string {
 	return user["last"].(string)
 }
 
+// GetUserRole returns the role of the user.
 func (user User) GetUserRole() string {
 	return user["role"].(string)
 }
 
-// EFFECTS: Returns the user's API key.
+// GetUserAPIKey returns the user's API key.
 func (user User) GetUserAPIKey() string {
 	return user["apikey"].(string)
 }
