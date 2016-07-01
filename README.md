@@ -3,7 +3,6 @@
 ## Introduction
 This is a library built for using our REST APIs.
 
-
 ## Installation
 
 One nice thing about Go is how easy it is to work with packages.
@@ -24,4 +23,9 @@ import (
 in your main folder.
 
 ## Support
-Please feel free to reach out to us if you have any questions/concerns.
+Please feel free to [reach out to us](https://hologram.io/) if you have any questions/concerns.
+
+## Credits
+Special thanks to the amazing work that @kurrik put in his
+[twittergo](https://github.com/kurrik/roomanna/) library. The Errors and Parse
+interface/functions were taken from there and modified for our needs.
