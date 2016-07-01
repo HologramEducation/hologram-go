@@ -9,11 +9,10 @@ import (
 type Device map[string]interface{}
 
 // Devices is just a list of Device(s).
-type Devices []Device
+type Devices []interface{}
 
-// TODO: Fixes Devices return type.
 // EFFECTS: Returns device details.
-func GetDevices() Device {
+func GetDevices() Devices {
 
 	req := createGetRequest("/devices")
 
@@ -23,7 +22,7 @@ func GetDevices() Device {
 		os.Exit(1)
 	}
 
-	return unmarshallIntoObject(resp)
+	return unmarshallIntoArrayObject(resp)
 }
 
 // REQUIRES: a device id.

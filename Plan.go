@@ -43,6 +43,10 @@ func GetDeviceDataPlan(planid int) Plan {
 	return (Plan)(plans[0].(map[string]interface{}))
 }
 
+///////////////////////////////////////////////////
+// GENERIC PLAN GETTER FUNCTIONS
+///////////////////////////////////////////////////
+
 // EFFECTS: Returns the data plan id.
 func (plan Plan) GetDataPlanId() float64 {
 	return plan["id"].(float64)

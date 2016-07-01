@@ -42,7 +42,7 @@ func InitializeUsernameAndPassword(credentialFile string) {
 }
 
 // EFFECTS: Sends a HTTP request through this instance's HTTP client.
-func SendRequest(req *http.Request) (response *Response, err error) {
+func sendRequest(req *http.Request) (response *Response, err error) {
 
 	options := cookiejar.Options {
 		PublicSuffixList: publicsuffix.List,
@@ -83,12 +83,16 @@ func createGetRequest(derivedUrl string) (req *http.Request) {
 func createPostRequest(derivedUrl string, params Parameters) (req *http.Request) {
 
 	data := url.Values{}
-	// TODO: lolololol
-	//data.Set(parameterNames, parameterValues)
+
+	// Set all body parameters here.
+	for i, _ := range params.items {
+		data.Set(params.items[i], params.values[i])
+	}
 
 	body := strings.NewReader(data.Encode())
 
 	req, err = http.NewRequest("POST", HOLOGRAM_REST_API_BASEURL + derivedUrl, body)
+	fmt.Println(HOLOGRAM_REST_API_BASEURL + derivedUrl)
 	if err != nil {
 		fmt.Printf("Could not parse request: %v\n", err)
 		os.Exit(1)

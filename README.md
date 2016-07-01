@@ -9,7 +9,9 @@ This is a library built for using our REST APIs.
 One nice thing about Go is how easy it is to work with packages.
 First, run:
 
-go get github.com/hologram-io/hologram-go-library
+```go
+go get github.com/hologram-io/hologram-go
+```
 
 All you need to do after that is add this snippet of code in your source:
 
