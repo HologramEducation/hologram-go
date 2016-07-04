@@ -19,7 +19,7 @@ All you need to do after that is add this snippet of code in your source:
 ```
 import (
 	<your other imports go here>
-	"github.com/hologram-io/hologram-go-library"
+	"github.com/hologram-io/hologram-go"
 	<your other imports go here>
 )
 ```
