@@ -1,11 +1,11 @@
 package HologramGo
 
 import (
-	"testing"
-	"fmt"
 	"../Hologram-Go"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
+	"testing"
 )
 
 func TestGetProductCategories(t *testing.T) {

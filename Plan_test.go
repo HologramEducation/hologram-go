@@ -1,11 +1,11 @@
 package HologramGo
 
 import (
-	"testing"
-	"fmt"
 	"../Hologram-Go"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
+	"testing"
 )
 
 func TestGetDeviceDataPlan(t *testing.T) {

@@ -1,11 +1,11 @@
 package HologramGo_Test
 
 import (
-	"testing"
-	"fmt"
 	"../Hologram-Go"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
+	"testing"
 )
 
 func TestGetDevices(t *testing.T) {
