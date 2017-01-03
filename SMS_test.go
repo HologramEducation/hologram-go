@@ -2,7 +2,7 @@ package HologramGo
 
 import "testing"
 
-func TestGetProduct(t *testing.T) {
+func TestGetProductSMS(t *testing.T) {
 	expectedProductName := "SIM Card"
 
 	var product = GetProduct(1)

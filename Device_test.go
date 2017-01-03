@@ -1,4 +1,4 @@
-package HologramGo_Test
+package HologramGo
 
 import (
 	"github.com/hologram-io/hologram-go"
