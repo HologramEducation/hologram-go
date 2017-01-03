@@ -3,10 +3,15 @@ language: go
 go_import_path: hologram-temp
 
 go:
-  - 1.x
-  - 1.6
-  - 1.7.x
-  - master
+- 1.x
+- 1.6
+- 1.7.x
+- master
 
 install:
-  - go get github.com/hologram-io/hologram-go
+- go get github.com/hologram-io/hologram-go
+
+notifications:
+  email: false
+  slack:
+    secure: XToigVpKXHupo90sIUcw9R1Y8e6zjATmYNY/mSqTkpGX57k5gfiewgXDzKF761i5sB+KGV8Odr2DCjrkPmgwYINqbXrvhioFK+KrDyEEkpCJrL5SdqklNLoe72pwvRYfU9S/NGZx92CW/OJLzwSJMolRYb6otDFCN4spuLYSiE7IZKVJjTRrsBbHGofsXeViG8Zn9wYRt9KNJNAqI/zRRsnL2hbBbEZifdZDvpsrz3SRDefl5YUAlA1qqThFXP/jhy39yRbH42dz+4CnzthmUNhllbmpTTYUsM1qdw8jnhU1MdxfA1SnfwkZI1IOGpwhsumhsB69RylWvN8aZ+MCEd4HcAIydTLV9uyAdrErUjda2illidiFSgG8YhocNUXzMruZbml0SO4mno3EX4l4OXKT+wT4N86bYE7EZlblwHvXnvjxXJTFRDkOUdDTj2SwXuxqg1wAP77Hdxavgs+X+Rx5zcU7Z8JJcqXaKeRc6lxImE/YYuoAN5p5aHArVh621/1oPKyqAsWm8WWHEMa3xkjYhIMzmBFdNGxCJMUJVknjjY5WHengBpF0CSP/snpC/g4ZUii0jsFO/6p1THEIiKuNkCyMTU6wvRqteypbEWvpdpHVk6Pmd/57hts7rCjt5cUoIobm1H4tfhkoIkoE1XUuQDW4k6Jaad5o5YSRaz0=
