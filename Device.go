@@ -75,13 +75,13 @@ func PurchaseAndAssignPhoneNumberToDevice(deviceid int) Device {
 // GENERIC DEVICE GETTER FUNCTIONS
 ///////////////////////////////////////////////////
 
-// GetDeviceID returns the id.
-func (device Device) GetDeviceID() float64 {
+// GetDeviceId returns the id.
+func (device Device) GetDeviceId() float64 {
 	return device["id"].(float64)
 }
 
-// GetDeviceUserID returns the user id.
-func (device Device) GetDeviceUserID() float64 {
+// GetDeviceUserId returns the user id.
+func (device Device) GetDeviceUserId() float64 {
 	return device["userid"].(float64)
 }
 
