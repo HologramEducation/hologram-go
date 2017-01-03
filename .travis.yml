@@ -6,4 +6,5 @@ go:
   - 1.7.x
   - master
 
-go_import_path: github.com/hologram-io/hologram-go
+install:
+  - go get github.com/hologram-io/hologram-go
