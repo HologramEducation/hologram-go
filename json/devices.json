@@ -1,0 +1,214 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 84,
+      "userid": 4477,
+      "name": "Unnamed Device (90123)",
+      "type": "Unknown",
+      "whencreated": "2016-06-06 21:51:16",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [
+        {
+          "id": 15,
+          "name": "wassup4"
+        },
+        {
+          "id": 8,
+          "name": "wassup2"
+        },
+        {
+          "id": 7,
+          "name": "wassup"
+        },
+        {
+          "id": 16,
+          "name": "wassup6"
+        },
+        {
+          "id": 9,
+          "name": "wassup3"
+        },
+        {
+          "id": 14,
+          "name": "wassup1"
+        }
+      ],
+      "links": {
+        "cellular": [
+          {
+            "id": 39,
+            "sim": "1234567890123",
+            "imsi": 1234567890123,
+            "carrierid": 1,
+            "state": "LIVE",
+            "whenclaimed": "2016-06-06 21:51:16",
+            "whenexpires": "2016-07-06 21:51:16",
+            "overagelimit": -1,
+            "last_network_used": "",
+            "last_connect_time": "",
+            "cur_billing_data_used": 0,
+            "apn": "test",
+            "plan": {
+              "id": 100,
+              "tier": 1,
+              "name": "TEMP PLAN",
+              "data": 0,
+              "cost": "123.00",
+              "overage": "123.00",
+              "sms": "123.00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 83,
+      "userid": 477,
+      "name": "Unnamed Device (67890)",
+      "type": "Unknown",
+      "whencreated": "2016-06-06 19:15:07",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": [
+          {
+            "id": 38,
+            "sim": "1234567890",
+            "imsi": 1234567890,
+            "carrierid": 1,
+            "state": "LIVE-PENDING",
+            "whenclaimed": "2016-06-06 19:15:07",
+            "whenexpires": "2018-05-27 19:15:07",
+            "overagelimit": -1,
+            "last_network_used": "",
+            "last_connect_time": "",
+            "cur_billing_data_used": 0,
+            "apn": "test",
+            "plan": {
+              "id": 52,
+              "tier": 1,
+              "name": "3 MB",
+              "data": 3000000,
+              "cost": "3.40",
+              "overage": "0.20",
+              "sms": "0.19"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 82,
+      "userid": 477,
+      "name": "Unnamed Device (00001)",
+      "type": "Unknown",
+      "whencreated": "2016-05-04 14:41:28",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": [
+          {
+            "id": 37,
+            "sim": "99900001",
+            "imsi": 1000001,
+            "carrierid": 1,
+            "state": "LIVE",
+            "whenclaimed": "2016-05-04 14:41:28",
+            "whenexpires": "2018-04-24 14:41:28",
+            "overagelimit": 10,
+            "last_network_used": "",
+            "last_connect_time": "",
+            "cur_billing_data_used": 0,
+            "apn": "test",
+            "plan": {
+              "id": 52,
+              "tier": 1,
+              "name": "3 MB",
+              "data": 3000000,
+              "cost": "3.40",
+              "overage": "0.20",
+              "sms": "0.19"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 81,
+      "userid": 477,
+      "name": "Unnamed Device (09115)",
+      "type": "Unknown",
+      "whencreated": "2016-04-26 20:31:42",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": []
+      }
+    },
+    {
+      "id": 80,
+      "userid": 477,
+      "name": "Unnamed Device",
+      "type": "Unknown",
+      "whencreated": "2016-04-26 18:42:55",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": []
+      }
+    },
+    {
+      "id": 79,
+      "userid": 477,
+      "name": "Unnamed Device",
+      "type": "Unknown",
+      "whencreated": "2016-04-26 18:42:11",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": []
+      }
+    },
+    {
+      "id": 78,
+      "userid": 477,
+      "name": "Unnamed Device",
+      "type": "Unknown",
+      "whencreated": "2016-04-26 18:42:08",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": []
+      }
+    },
+    {
+      "id": 77,
+      "userid": 1,
+      "name": "Unnamed Device",
+      "type": "Unknown",
+      "whencreated": "2016-04-18 17:49:29",
+      "phonenumber": "",
+      "tunnelable": 0,
+      "hidden": 0,
+      "tags": [],
+      "links": {
+        "cellular": []
+      }
+    }
+  ]
+}

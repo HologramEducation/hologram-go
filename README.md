@@ -26,6 +26,15 @@ import (
 
 in your main folder.
 
+## Unit Tests
+Yay! you're ready for some good testing. All of the test cases are located in the
+top `test` directory. Mocked data (in JSON) are in the json directory. To run a unit test,
+just type:
+
+```
+go test <whichever test here>
+```
+
 ## Support
 Please feel free to [reach out to us](https://hologram.io/) if you have any questions/concerns.
 

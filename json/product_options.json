@@ -1,0 +1,173 @@
+{
+  "success": true,
+  "data": [
+    {
+      "productid": 0,
+      "appendsku": "N2-2FF3FF",
+      "pricechange": "0.00",
+      "description": "Combo Mini/Micro SIM",
+      "invoice_description": "Mini/Micro SIM"
+    },
+    {
+      "productid": 2,
+      "appendsku": "5DASH",
+      "pricechange": "0.00",
+      "description": "5 Dashes",
+      "invoice_description": "5 Dashes"
+    },
+    {
+      "productid": 2,
+      "appendsku": "4DASHPRO",
+      "pricechange": "0.00",
+      "description": "4 Dash Pros",
+      "invoice_description": "4 Dash Pros"
+    },
+    {
+      "productid": 0,
+      "appendsku": "E303",
+      "pricechange": "0.00",
+      "description": "Europe/Asia 2100MHz 3G",
+      "invoice_description": "EU/Asia Version"
+    },
+    {
+      "productid": 6,
+      "appendsku": "E303US",
+      "pricechange": "0.00",
+      "description": "North America 850/1900 MHz 3G",
+      "invoice_description": "North America Version"
+    },
+    {
+      "productid": 12,
+      "appendsku": "ASSET260",
+      "pricechange": "0.00",
+      "description": "Dash NA/SA 850/1900 3G (SU260)",
+      "invoice_description": "Dash (SU260)"
+    },
+    {
+      "productid": 12,
+      "appendsku": "ASSETPRO",
+      "pricechange": "10.00",
+      "description": "Dash Pro",
+      "invoice_description": "Dash Pro"
+    },
+    {
+      "productid": 13,
+      "appendsku": "SENSOR260",
+      "pricechange": "0.00",
+      "description": "Dash NA/SA 850/1900 3G (SU260)",
+      "invoice_description": "Dash (SU260)"
+    },
+    {
+      "productid": 13,
+      "appendsku": "SENSOR270",
+      "pricechange": "0.00",
+      "description": "Dash EU/AS 2100MHz 3G (SU2270)",
+      "invoice_description": "Dash Pro (SU270)"
+    },
+    {
+      "productid": 14,
+      "appendsku": "SOLAR260",
+      "pricechange": "0.00",
+      "description": "Dash NA/SA 850/1900 3G (SU260)",
+      "invoice_description": "Dash (SU260)"
+    },
+    {
+      "productid": 14,
+      "appendsku": "SOLARPRO",
+      "pricechange": "10.00",
+      "description": "Dash Pro",
+      "invoice_description": "Dash Pro"
+    },
+    {
+      "productid": 15,
+      "appendsku": "XS",
+      "pricechange": "0.00",
+      "description": "XS",
+      "invoice_description": "XS"
+    },
+    {
+      "productid": 15,
+      "appendsku": "S",
+      "pricechange": "0.00",
+      "description": "S",
+      "invoice_description": "S"
+    },
+    {
+      "productid": 15,
+      "appendsku": "M",
+      "pricechange": "0.00",
+      "description": "M",
+      "invoice_description": "M"
+    },
+    {
+      "productid": 15,
+      "appendsku": "L",
+      "pricechange": "0.00",
+      "description": "L",
+      "invoice_description": "L"
+    },
+    {
+      "productid": 15,
+      "appendsku": "XL",
+      "pricechange": "0.00",
+      "description": "XL",
+      "invoice_description": "XL"
+    },
+    {
+      "productid": 1,
+      "appendsku": "N2-2FF3FF4FF",
+      "pricechange": "0.00",
+      "description": "Combo Mini/Micro/Nano SIM",
+      "invoice_description": "Mini/Micro/Nano SIM"
+    },
+    {
+      "productid": 0,
+      "appendsku": "3FF",
+      "pricechange": "0.00",
+      "description": "Combo Mini/Micro SIMs",
+      "invoice_description": "Mini/Micro SIMs"
+    },
+    {
+      "productid": 17,
+      "appendsku": "4FF",
+      "pricechange": "0.00",
+      "description": "Combo Mini/Micro/Nano SIMs",
+      "invoice_description": "Mini/Micro/Nano SIMs"
+    },
+    {
+      "productid": 3,
+      "appendsku": "DASH270",
+      "pricechange": "0.00",
+      "description": "Europe/Asia 2100MHz 3G (SU270)",
+      "invoice_description": "EU/Asia (SU270)"
+    },
+    {
+      "productid": 3,
+      "appendsku": "DASH260",
+      "pricechange": "0.00",
+      "description": "Americas 850/1900 MHz 3G (SU260)",
+      "invoice_description": "Americas (SU260)"
+    },
+    {
+      "productid": 13,
+      "appendsku": "SENSORPRO",
+      "pricechange": "10.00",
+      "description": "Dash Pro (LU200)",
+      "invoice_description": "Dash Pro (LU200)"
+    },
+    {
+      "productid": 14,
+      "appendsku": "SOLAR270",
+      "pricechange": "0.00",
+      "description": "Dash EU/AS 2100MHz 3G (SU270)",
+      "invoice_description": "Dash (SU270)"
+    },
+    {
+      "productid": 12,
+      "appendsku": "ASSET270",
+      "pricechange": "0.00",
+      "description": "Dash EU/AS 2100MHz 3G (SU270)",
+      "invoice_description": "Dash (SU270)"
+    }
+  ]
+}
