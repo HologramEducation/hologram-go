@@ -1,5 +1,7 @@
 language: go
 
+go_import_path: hologram-temp
+
 go:
   - 1.x
   - 1.6
