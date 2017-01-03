@@ -28,7 +28,7 @@ in your main folder.
 
 ## Unit Tests
 Yay! you're ready for some good testing. All of the test cases are located in the
-top `test` directory. Mocked data (in JSON) are in the json directory. To run a unit test,
+top `test` directory. Mocked data (in JSON) are in the `test/json` directory. To run a unit test,
 just type:
 
 ```
