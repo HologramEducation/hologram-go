@@ -2,6 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/hologram-io/hologram-go)](https://goreportcard.com/report/github.com/hologram-io/hologram-go)
 
+
 ## Introduction
 This is a library built for using our REST APIs.
 
