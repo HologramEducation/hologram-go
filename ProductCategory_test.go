@@ -1,7 +1,7 @@
 package HologramGo
 
 import (
-	"../Hologram-Go"
+	"github.com/hologram-io/hologram-go"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

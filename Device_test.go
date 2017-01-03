@@ -1,7 +1,7 @@
 package HologramGo_Test
 
 import (
-	"../Hologram-Go"
+	"github.com/hologram-io/hologram-go"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
